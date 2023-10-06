@@ -42,7 +42,11 @@ console.log('inside toast: ', toast)
                 callbackFunctionOnNetworkDown={(speed) => showToast(speed)}
                 callbackFunctionOnNetworkTest={(speed) => SetCheckSpeed(speed)}
             />
-            {checkSpeed} KB/s
+            <span style={{
+                color: 'white',
+                fontSize: '0.8rem',
+                fontWeight: 'bold'
+            }}> {checkSpeed} KB/s </span>
         </div>
     )
 }

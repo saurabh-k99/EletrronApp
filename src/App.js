@@ -6,6 +6,7 @@ import Home from './screens/Home'
 import Test from './screens/Test'
 import Feedback from './screens/Feedback'
 import './App.css'
+import Problem from './screens/Problem'
 
 const App = () => {
   const [localStream, setLocalStream] = useState(null)
@@ -18,9 +19,9 @@ const App = () => {
           <Route path='/' element={<Home setLocalStream={setLocalStream}/>} exact />
           <Route path='/test' element={<Test/>} />
           <Route path='/feedback' element={<Feedback localStream={localStream}/>} />
+          <Route path='/problem' element={<Problem />} />
         </Routes>
       </Router>
-      <Footer />
     </div>
   )
 }

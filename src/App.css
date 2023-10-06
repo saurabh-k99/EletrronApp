@@ -1,3 +1,13 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #e6ecf0;
+}
+
 .customToast {
     position: absolute;
     background-color: rgba(170, 28, 28, 0.747);
@@ -5,4 +15,43 @@
     padding: 0.5rem;
     bottom: 2rem;
     left: 2rem;
+}
+
+.homeContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.instructionContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: white;
+    width: 80%;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.customButton {
+    text-decoration: none;
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 1rem;
+    text-transform: capitalize;
+    font-weight: bold;
+    background-color: #5e72e4;
+    color: white;
+    border-radius: 5px;
+}
+
+.headerContainer {
+    display: flex;
+    background-color: #101130;
+    padding: 1rem;
+    justify-content: space-between;
 }

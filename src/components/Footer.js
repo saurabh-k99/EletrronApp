@@ -3,10 +3,10 @@ import React from 'react'
 const Footer = () => {
     return (
         <div style={{
-            position: 'absolute',
+            position: 'fixed',
             width: '100%',
             textAlign: 'center',
-            bottom: '5px'
+            bottom: 0
         }}>Copyright &copy; DoSelect. All rights reserved.</div>
     )
 }

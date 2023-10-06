@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import problem from '../problem.js'
+import { Link } from 'react-router-dom'
 
 const Test = () => {
     const [imageSrc, setImageSrc] = useState('')
-    
+
 
     useEffect(() => {
         const eventSource = new EventSource('http://localhost:5000/source')
@@ -23,9 +24,22 @@ const Test = () => {
             <section className='problemsContainer'>
                 <table>
                     <thead>
+                        <td></td>
                         <td>Problem</td>
                         <td>Type</td>
                     </thead>
+                    <tbody>
+                        {
+                            [1, 2, 3].map((e) => (
+                                <tr>
+                                    <td>{e}</td>
+                                    <td>{problem.name}</td>
+                                    <td>{problem.type}</td>
+                                    <td><Link to={'/problem'}>Solve</Link></td>
+                                </tr>
+                            ))
+                        }
+                    </tbody>
                 </table>
             </section>
 

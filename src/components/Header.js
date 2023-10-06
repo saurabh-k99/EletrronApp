@@ -3,8 +3,8 @@ import SpeedOMeter from './SpeedOMeter'
 
 const Header = () => {
     return (
-        <div>
-            <strong>DoSelect</strong>
+        <div className='headerContainer'>
+            <img src="logo.svg" alt="DoSelect" />
             <SpeedOMeter />
         </div>
     )

@@ -5,7 +5,8 @@ const Home = ({ setLocalStream }) => {
     return (
         <div className='homeContainer'>
             <div className='instructionContainer'>
-                <ol>
+                <h2 style={{margin:'1rem'}}>Instructions</h2>
+                <ol style={{margin:'1rem'}}>
                     <li>This is an online test.</li>
                     <li>Please make sure that you are using the latest version of the browser. We recommend using Google Chrome.</li>
                     <li>It mandatory to disable all the browser extensions and enabled Add-ons or open the assessment in incognito mode.</li>
@@ -14,8 +15,8 @@ const Home = ({ setLocalStream }) => {
                     <li> To know the results, please contact the administrator.</li>
                     <li> To refer to the FAQ document, you can click on the HELP button which is present in the top right corner of the test environment.</li>
                 </ol>
-                <p>Best wishes from DoSelect!</p>
-                <Link to={'/test'} onClick={() => getWebCamAccess(setLocalStream)}>Start Assesment</Link>
+                <p style={{margin:'1rem'}}>Best wishes from DoSelect!</p>
+                <Link className='customButton' to={'/test'} onClick={() => getWebCamAccess(setLocalStream)}>START ASSESMENT</Link>
             </div>
         </div>
     )
