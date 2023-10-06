@@ -19,7 +19,7 @@ const App = () => {
           <Route path='/' element={<Home setLocalStream={setLocalStream}/>} exact />
           <Route path='/test' element={<Test/>} />
           <Route path='/feedback' element={<Feedback localStream={localStream}/>} />
-          <Route path='/problem' element={<Problem />} />
+          <Route path='/problem' element={<Problem setLocalStream={setLocalStream}/>} />
         </Routes>
       </Router>
     </div>

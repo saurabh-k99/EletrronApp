@@ -3,14 +3,14 @@ const { app, BrowserWindow, globalShortcut } = require('electron')
 
 const createWindow = (width, height, file) => {
     const newWindow = new BrowserWindow({
-        // fullscreen: true,
+        fullscreen: true,
         width,
         height
     })
 
     // newWindow.loadFile(file)
     newWindow.loadURL('http://localhost:5000')
-    newWindow.webContents.openDevTools()
+    // newWindow.webContents.openDevTools()
     return newWindow
 }
 

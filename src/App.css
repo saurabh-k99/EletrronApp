@@ -22,7 +22,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
 }
 
 .instructionContainer {
@@ -40,7 +40,7 @@ body {
 .customButton {
     text-decoration: none;
     margin: 1rem;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     font-size: 1rem;
     text-transform: capitalize;
     font-weight: bold;
@@ -54,4 +54,68 @@ body {
     background-color: #101130;
     padding: 1rem;
     justify-content: space-between;
+}
+
+.testContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.problemsContainer {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
+.problemsTable {
+    width: 90%;
+    padding: 2rem;  
+    border-collapse: collapse;
+}
+
+tr, th, td {
+    border: none;
+    border-bottom: 1px solid #ddd;
+    font-size: 18px;
+    margin: 1rem;
+    padding: 1rem;
+    color: #4e4e4e
+  }
+
+.proctorContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.problemsContainer {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.descriptionContainer {
+    margin: 2rem 2rem;
+    font-size: 1.2rem;
+}
+
+.optionContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+}
+
+.optionElement {
+    width: 80%;
+    font-size: 1.2rem;
+    padding: 2rem;
+    margin: 2rem;
+    background-color: white;
+    border-radius: 10px;
 }
