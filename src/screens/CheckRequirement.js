@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
-
+import { toast } from 'react-toastify';
+import '../components/alertBox.css';
 // import { ipcRenderer } from 'electron';
 
 
@@ -13,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 // const { exec } = window.require('electron').remote.require('child_process');
 
 
-const onClick = (navigate)=>{
+const onClick = (navigate, notify)=>{
     if (false) {
         // // Define the WMI query
         // const query = 'SELECT * FROM Win32_Process';
@@ -31,12 +32,13 @@ const onClick = (navigate)=>{
         // console.log('This is Windows.');
   } else {
         const command = `ps -e | grep -e teams -e firefox -e anydesk -e 'chrome$'`;
-        window.electron.exec(command, (res) => {
-        if (!res) {
+        // const screenCount = ipcRenderer.sendSync('getScreenCount');
+        window.electron.exec(command, ({screenCount, res}) => {
+        if (res || screenCount > 1) {
+            notify('There might be either screen is shared or app is running in background');
+        }else{
             console.log('not any app open');
             navigate('/home')
-        }else{
-            alert('please close the background app');
         }
         });
     }
@@ -44,9 +46,29 @@ const onClick = (navigate)=>{
 
 const Home = () => {
     const navigate = useNavigate();
+    const [showAlert, setShowAlert] = useState(false);
+
+
+    const notify = (message) => {
+        let toastElement = document.getElementsByClassName('Toastify__toast');
+        if(!toastElement.length){
+                toast.warn(message, {
+                theme: "dark",
+                position: 'top-right',
+                hideProgressBar: true, // Show or hide the progress bar
+                closeOnClick: true, // Close the notification when clicked
+                autoClose: 2000,
+                className: 'alertPosition'
+                });
+        }
+      };
+    
+
 
     return (
-       <button  className= {'customButton'} onClick={()=> onClick(navigate)}>Start Assessment</button>
+        <>
+               <button  className= {'customButton'} onClick={()=> onClick(navigate, notify)}>Start Assessment</button>
+        </>
     )
 }
 

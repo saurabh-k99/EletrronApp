@@ -22,16 +22,18 @@ const createWindow = (width, height, file) => {
 app.whenReady().then(() => {
     const { screen } = require('electron')
     try {
-        const mainWindow = createWindow(1200, 600, path.resolve(__dirname, 'build', 'index.html'))
+        const mainWindow = createWindow(1200, 600, path.resolve(__dirname, 'build', 'index.html'));
+        const screenCount = screen.getAllDisplays().length;
+
         ipcMain.handle('execute-command', async (event, command) => {
             try {
-
                 return new Promise((resolve, reject) => {
                     exec(command, (err, stdout, stderr) => {
                         if (err) {
-                            resolve('');
+                            resolve({screenCount, res: ''});
+                            return;
                         }
-                        resolve(stdout);
+                        resolve({screenCount, res: stdout});
                         });
                 });
             } catch (error) {
@@ -43,8 +45,6 @@ app.whenReady().then(() => {
         globalShortcut.register('ESC', () => {
             mainWindow.fullScreen = false
         })
-
-        const screenCount = screen.getAllDisplays().length
 
         console.log('screenCount: ', screenCount)
         

@@ -1,5 +1,9 @@
 import React from 'react'
-import { ReactInternetSpeedMeter } from 'react-internet-meter'
+import { ReactInternetSpeedMeter } from 'react-internet-meter';
+import { toast } from 'react-toastify';
+import '../components/alertBox.css';
+
+
 
 const SpeedOMeter = () => {
     const [checkSpeed, SetCheckSpeed] = React.useState('-');
@@ -11,20 +15,19 @@ const SpeedOMeter = () => {
     })
 
     const showToast = (speed) => {
-        let toast = document.getElementById('customToast')
-
-        if(!toast) {
-            toast = document.createElement('div')
-            document.appendChild(toast)
-            toast.id = 'customToast'
-            toast.innerText = 'Oops... Internet speed is slow!!!'
-        }
-console.log('inside toast: ', toast)
-        toast.style.display = 'block'
-
-        setTimeout((toast) => {
-            toast.style.display = 'none'
-        }, 2000)
+        let toastElement = document.getElementsByClassName('Toastify__toast');
+            setTimeout(()=>{
+                if(!toastElement.length){
+                toast.warn(`Oops... Internet speed is slow!!! - ${speed} KB/s`, {
+                    theme: "dark",
+                    position: 'top-right',
+                    hideProgressBar: true, // Show or hide the progress bar
+                    closeOnClick: true, // Close the notification when clicked
+                    autoClose: false,
+                    className: 'alertPosition'
+                  });
+                }
+            }, 2000);
     }
 
     return (
