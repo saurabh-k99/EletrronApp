@@ -21,7 +21,7 @@ const App = () => {
           <Route path = '/home' element={<Home setLocalStream={setLocalStream}/>} />
           <Route path='/test' element={<Test/>} />
           <Route path='/feedback' element={<Feedback localStream={localStream}/>} />
-          <Route path='/problem' element={<Problem />} />
+          <Route path='/problem' element={<Problem setLocalStream={setLocalStream}/>} />
         </Routes>
       </Router>
     </div>

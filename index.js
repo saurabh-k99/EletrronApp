@@ -5,7 +5,7 @@ const { exec } = require('child_process');
 const createWindow = (width, height, file) => {
     console.log(`path.join(__dirname, 'preload.js')`, path.join(__dirname, 'preload.js'));
     const newWindow = new BrowserWindow({
-        // fullscreen: true,
+        fullscreen: true,
         width,
         height,
         webPreferences: {
@@ -15,7 +15,7 @@ const createWindow = (width, height, file) => {
 
     // newWindow.loadFile(file)
     newWindow.loadURL('http://localhost:5000')
-    newWindow.webContents.openDevTools()
+    // newWindow.webContents.openDevTools()
     return newWindow
 }
 

@@ -22,11 +22,12 @@ const Test = () => {
     return (
         <div className='testContainer'>
             <section className='problemsContainer'>
-                <table>
+                <table className='problemsTable'>
                     <thead>
-                        <td></td>
-                        <td>Problem</td>
-                        <td>Type</td>
+                        <th></th>
+                        <th>Problem</th>
+                        <th>Type</th>
+                        <th></th>
                     </thead>
                     <tbody>
                         {
@@ -35,7 +36,7 @@ const Test = () => {
                                     <td>{e}</td>
                                     <td>{problem.name}</td>
                                     <td>{problem.type}</td>
-                                    <td><Link to={'/problem'}>Solve</Link></td>
+                                    <td><Link className='customButton' to={'/problem'}>Solve</Link></td>
                                 </tr>
                             ))
                         }
@@ -48,7 +49,7 @@ const Test = () => {
                     id='primary-camera'
                     style={{
                         width: '300px',
-                        border: '1px solid black'
+                        margin: '2rem 0'
                     }} />
 
                 <img
@@ -57,7 +58,7 @@ const Test = () => {
                     style={{
                         width: '300px',
                         minWidth: '200px',
-                        border: '1px solid black'
+                        margin: '2rem 0'
                     }}
                 />
             </section>
