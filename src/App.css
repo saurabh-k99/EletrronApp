@@ -1,0 +1,8 @@
+.customToast {
+    position: absolute;
+    background-color: rgba(170, 28, 28, 0.747);
+    color: white;
+    padding: 0.5rem;
+    bottom: 2rem;
+    left: 2rem;
+}
