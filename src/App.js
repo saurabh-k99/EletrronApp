@@ -7,6 +7,7 @@ import Test from './screens/Test'
 import Feedback from './screens/Feedback'
 import './App.css'
 import Problem from './screens/Problem'
+import CheckRequirement from './screens/CheckRequirement'
 
 const App = () => {
   const [localStream, setLocalStream] = useState(null)
@@ -16,7 +17,8 @@ const App = () => {
       <Header />
       <Router>
         <Routes>
-          <Route path='/' element={<Home setLocalStream={setLocalStream}/>} exact />
+          <Route path='/'  element = {<CheckRequirement/>} exact/>
+          <Route path = '/home' element={<Home setLocalStream={setLocalStream}/>} />
           <Route path='/test' element={<Test/>} />
           <Route path='/feedback' element={<Feedback localStream={localStream}/>} />
           <Route path='/problem' element={<Problem setLocalStream={setLocalStream}/>} />
